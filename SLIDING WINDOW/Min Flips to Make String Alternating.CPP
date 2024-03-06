@@ -19,22 +19,18 @@ public:
         // sliding window to compare string s with both the options
         int diff1 = 0, diff2 = 0, min_flips = n;
         for(int i=0; i<n; i++){
-            if(s[i] != option1[i]) 
-                diff1++;
-            if(s[i] != option2[i])
-                diff2++;
+            if(s[i] != option1[i]) diff1++;
+            if(s[i] != option2[i]) diff2++;
         }
         min_flips = min(diff1, diff2);
 
         for(int i=n; i<2*n; i++){
-            if(s[i] != option1[i])
-                diff1++;
-            if(s[i-n] != option1[i-n])
-                diff1--;
-            if(s[i] != option2[i])
-                diff2++;
-            if(s[i-n] != option2[i-n])
-                diff2--;
+            if(s[i] != option1[i]) diff1++;
+            if(s[i-n] != option1[i-n]) diff1--;
+
+            if(s[i] != option2[i]) diff2++;
+            if(s[i-n] != option2[i-n]) diff2--;
+            
             min_flips = min({min_flips, diff1, diff2});
         }
 
