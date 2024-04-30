@@ -13,10 +13,8 @@ public:
         unordered_map<string, int> dp;
         int ans = 1;
 
-        for(auto word: words)
-            dp[word] = 1;
-
         for(auto word: words){
+            dp[word] = 1;
             for(int i=0; i<word.length(); i++){
                 string prefix = word.substr(0, i);
                 string suffix = word.substr(i+1);
