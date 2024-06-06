@@ -2,30 +2,32 @@
 
 class Solution {
 public:
-    bool isNStraightHand(vector<int>& hand, int k) {
-        unordered_map<int, int> freq;
+    bool isNStraightHand(vector<int>& hand, int groupSize) {
         int n = hand.size();
-        if(n%k)
+        if(n%groupSize)
             return false;
         
-        for(int h: hand)
-            freq[h]++;
         sort(hand.begin(), hand.end());
         
+        unordered_map<int, int> freq;
+        for(int i=0; i<n; i++)
+            freq[hand[i]]++;
+        
         for(int i=0; i<n; i++){
-            if(freq.contains(hand[i])){
-                int num = hand[i], curr = 0;
-                while(freq.contains(num) and curr<k){
-                    freq[num]--;
-                    if(freq[num]==0)
-                        freq.erase(num);
-                    curr++;
-                    num++;
+            if(freq[hand[i]]!=0){
+                int k = groupSize;
+                int curr = hand[i];
+                while(k--){
+                    if(freq[curr]){
+                        freq[curr]--;
+                        curr++;
+                    }else{
+                        return false;
+                    }
                 }
-                if(curr!=k)
-                    return false;
             }
         }
-        return !freq.size();
+
+        return true;
     }
 };
