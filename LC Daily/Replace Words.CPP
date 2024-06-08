@@ -1,5 +1,7 @@
-// 648. Replace Words - Using HashSet
+// 648. Replace Words 
 
+
+// HashSet solution
 class Solution {
 public:
     string replaceWords(vector<string>& dictionary, string sentence) {
@@ -74,7 +76,7 @@ public:
                 return prefix;
         }
         if(crawl->isLeaf)
-                return prefix;
+            return prefix;
         return "";
     }
 
