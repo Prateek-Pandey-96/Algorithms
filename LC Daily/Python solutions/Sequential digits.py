@@ -1,5 +1,5 @@
 # 1291. Sequential Digits
-
+from typing import List
 class Solution:
     def sequentialDigits(self, low: int, high: int) -> List[int]:
         result, mn, mx = [], 10, 1000000000
