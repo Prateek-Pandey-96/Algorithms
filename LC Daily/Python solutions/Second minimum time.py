@@ -1,5 +1,6 @@
 # 2045. Second Minimum Time to Reach Destination
 from typing import List
+from collections import deque
 class Solution:
     def secondMinimum(self, n: int, edges: List[List[int]], time: int, change: int) -> int:
         """ 
