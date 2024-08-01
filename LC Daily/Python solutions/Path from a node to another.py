@@ -1,3 +1,10 @@
+from typing import Optional
+
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
 class Solution:
     path_a, path_b = "", ""
     def dfs(self, node: TreeNode, curr_path, val: int, is_src: bool):
