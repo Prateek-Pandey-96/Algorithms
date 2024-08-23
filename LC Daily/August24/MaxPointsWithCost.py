@@ -1,4 +1,5 @@
 # 1937. Maximum Number of Points with Cost
+from typing import List
 class Solution:
     def maxPoints(self, points: List[List[int]]) -> int:
         # seems like a classic dp problem but it is not that straighforward
