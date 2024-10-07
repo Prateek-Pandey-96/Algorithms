@@ -1,5 +1,5 @@
 # 1289. Minimum Falling Path Sum II
-
+from typing import List
 class Solution:
     def minFallingPathSum(self, grid: List[List[int]]) -> int:
         n = len(grid)
